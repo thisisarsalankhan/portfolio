@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mohd Arsalan Khan — Cloud Engineer</title>
+  <meta name="description" content="Portfolio of Mohd Arsalan Khan — Cloud Engineer. Resume, projects, skills and contact." />
+  <link rel="icon" href="data:," />
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#7c5cff;--glass:rgba(255,255,255,0.04)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;color:#e6eef6;background:linear-gradient(180deg,#071021 0%, #081021 100%);-webkit-font-smoothing:antialiased}
+    header{position:sticky;top:0;z-index:60;background:linear-gradient(180deg,rgba(7,16,33,0.7),rgba(7,16,33,0.35));backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700}
+    .logo{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),#34d399);color:white;font-weight:800}
+    .navlinks{display:flex;gap:12px;align-items:center}
+    .navlinks a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600}
+    .navlinks a.active, .navlinks a:hover{color:white;background:var(--glass)}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;padding:56px 0}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:28px;border-radius:14px;border:1px solid rgba(255,255,255,0.03)}
+    h1{font-size:32px;margin:0 0 8px}
+    .title-small{color:var(--muted);margin:0 0 18px}
+    /* === BUTTON LAYOUT (vertical + right aligned) === */
+/* === Centered Resume Button === */
+.cta-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.cta-row .btn {
+  padding: 12px 28px;
+  font-size: 16px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+  .cta-row .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  }
+
+
+
+@media (max-width: 640px) {
+  .cta-row {
+    align-items: center; /* center on mobile */
+  }
+  .cta-row .btn {
+    width: 100%;
+  }
+}
+
+    .btn{padding:10px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#00c2ff);color:#041027}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+    .stats{display:flex;gap:12px;margin-top:22px}
+    .stat{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;text-align:center;min-width:94px}
+    .about, .services, .portfolio, .testimonials, .blog, .contact{padding:40px 0}
+    .section-title{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+    .grid{display:grid;gap:16px}
+    .cols-3{grid-template-columns:repeat(3,1fr)}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    footer{padding:24px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02)}
+    .avatar{width:120px;height:120px;border-radius:18px;background:linear-gradient(135deg,#7c5cff,#00c2ff);display:grid;place-items:center;color:white;font-weight:800;font-size:28px}
+    a.inline{color:inherit;text-decoration:underline}
+
+    /* === HERO FULL PHOTO LAYOUT === */
+.hero {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px 60px;
+}
+
+.hero-center {
+  max-width: 700px;
+}
+
+.hero-photo {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 24px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  border: 3px solid rgba(124, 92, 255, 0.6);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin: 12px 0 10px;
+  font-weight: 800;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero .subtitle {
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+@media (max-width: 640px) {
+  .hero-photo {
+    width: 150px;
+    height: 150px;
+  }
+  .hero h1 {
+    font-size: 26px;
+  }
+}
+
+    
+    /* ===== Profile Photo (Replaces avatar) ===== */
+.photo-wrapper {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7c5cff, #00c2ff);
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.photo-wrapper:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.4);
+}
+.photo-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0px rgba(124,92,255,0.4); }
+  50% { box-shadow: 0 0 14px rgba(124,92,255,0.7); }
+  100% { box-shadow: 0 0 0px rgba(124,92,255,0.4); }
+}
+.photo-wrapper {
+  animation: pulseGlow 4s infinite ease-in-out;
+}
+@media (max-width: 640px) {
+  .photo-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+
+    /* Contact form specific fixes */
+    .contact-card{max-width:680px}
+    form.contact-form{display:flex;flex-direction:column;gap:16px}
+    .form-row{display:flex;flex-direction:column}
+    label.form-label{font-weight:600;margin-bottom:6px;color:#e6eef6}
+    input.form-input, textarea.form-input{width:100%;padding:10px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.03);color:#fff;font-size:14px}
+    textarea.form-input{resize:vertical;min-height:100px}
+    input.form-input:focus,textarea.form-input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(124,92,255,0.08)}
+    .btn-row{display:flex;gap:12px;align-items:center}
+    .toast{color:var(--muted)}
+
+    @media (max-width:980px){.hero{grid-template-columns:1fr}.navlinks{display:none}.container{padding:18px}}
+    @media (max-width:640px){h1{font-size:26px}.avatar{width:96px;height:96px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand" aria-label="brand">
+          <div class="logo">AK</div>
+          <div>
+            <div style="line-height:1">Mohd Arsalan Khan</div>
+            <div style="font-size:12px;color:var(--muted);margin-top:2px">Cloud Engineer — AWS re/Start Graduate</div>
+          </div>
+        </div>
+        <div class="navlinks" id="navlinks">
+          <a href="#home" class="active">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Skills</a>
+          <a href="#portfolio">Work</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center">
+          <a class="btn btn-primary" href="#contact" id="connectBtn">Get in touch</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="home">
+    
+    <section class="hero" id="home">
+  <div class="hero-center">
+    <div class="hero-photo">
+      <img src="arsalan.jpg" alt="Mohd Arsalan Khan" />
+    </div>
+    <h1>Hi — I'm <span>Mohd Arsalan Khan</span></h1>
+    <p class="subtitle">
+      Cloud Engineer focused on AWS, Linux and Networking.<br />
+      AWS re/Start Graduate with hands-on experience in EC2, S3, IAM, and VPC.
+    </p>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="Arsalan%20New%20Resume.pdf" download>Download Resume</a>
+      
+    </div>
+  </div>
+</section>
+
+
+    <section id="about" class="about">
+      <div class="section-title"><h2 style="margin:0">About</h2></div>
+      <div class="grid" style="grid-template-columns:2fr 1fr;gap:18px;align-items:start">
+        <div class="card">
+          <h3 style="margin-top:0">Mohd Arsalan Khan — Cloud Engineer</h3>
+          <p style="color:var(--muted)">I combine analytical thinking from a mathematics background with practical cloud training to support and operate AWS environments. I have hands-on experience with EC2, S3, IAM, VPC, Lambda, Route53 and CloudWatch, and I am comfortable working with Linux and Oracle databases.</p>
+
+          <ul style="margin-top:12px;color:var(--muted)">
+            <li>AWS re/START graduate with end-to-end cloud lab experience</li>
+            <li>Built web and database projects during PGDCA (front-end + Oracle)</li>
+            <li>Strong troubleshooting, communication and teamwork skills</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4 style="margin-top:0">Skills</h4>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+            <div><strong>AWS (EC2, S3, IAM, VPC)</strong><div style="height:8px;background:rgba(255,255,255,0.03);border-radius:6px;margin-top:6px"><div style="width:80%;height:8px;background:linear-gradient(90deg,var(--accent),#00c2ff);border-radius:6px"></div></div></div>
+            <div><strong>Linux & CLI</strong><div style="height:8px;background:rgba(255,255,255,0.03);border-radius:6px;margin-top:6px"><div style="width:75%;height:8px;background:linear-gradient(90deg,#34d399,#7c5cff);border-radius:6px"></div></div></div>
+            <div><strong>Networking (DNS, IP/Subnetting)</strong><div style="height:8px;background:rgba(255,255,255,0.03);border-radius:6px;margin-top:6px"><div style="width:70%;height:8px;background:linear-gradient(90deg,#f59e0b,#ef4444);border-radius:6px"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <div class="section-title"><h2 style="margin:0">Certifications</h2><div style="color:var(--muted);font-weight:700">Verified training & certs</div></div>
+      <div class="grid cols-3">
+        <div class="card"><h4>AWS re/START</h4><p style="color:var(--muted)">Graduate — SMART Academy for Digital Technologies & Entrepreneurship</p></div>
+        <div class="card"><h4>OCI Generative AI Professional</h4><p style="color:var(--muted)">Oracle Licensed — Oct 2025</p></div>
+        <div class="card"><h4>Oracle Database@AWS Architect</h4><p style="color:var(--muted)">Oracle Certified — Oct 2025</p></div>
+        <div class="card"><h4>Course on Computer Concept (C.C.C.)</h4><p style="color:var(--muted)">NIELIT Certified — Aug 2019</p></div>
+
+      </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+      <div class="section-title"><h2 style="margin:0">Work</h2><div style="color:var(--muted);font-weight:700">(Projects)</div></div>
+      <div class="portfolio-grid" id="portfolioGrid">
+        
+        <div class="card" style="margin-bottom:12px"><h4 style="margin-top:0">My Portfolio Website</h4><p style="color:var(--muted)">Fully responsive personal portfolio designed and developed using HTML, CSS, and JavaScript.
+    Includes contact form, resume download, and cloud-hosted deployment.</p></div>
+        <div class="card" style="margin-bottom:12px"><h4 style="margin-top:0">Blood Bank Management System</h4><p style="color:var(--muted)">Web-based management application to handle hospital, donor and inventory data. Built front-end interfaces and integrated Oracle DB. (April 2025)</p></div>
+        <div class="card" style="margin-bottom:12px"><h4 style="margin-top:0">Cloud Labs & Hands-on Exercises</h4><p style="color:var(--muted)">Multiple AWS labs covering EC2 provisioning, S3 lifecycle policies, IAM policies and VPC configuration.</p></div>
+        
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="section-title"><h2 style="margin:0">Other Activities</h2></div>
+      <div class="grid cols-3">
+        <div class="card">"Student of the Year" award during graduation.</div>
+        <div class="card">Served as Class Representative during PGDCA.</div>
+        <div class="card">Active contributor to hands-on cloud labs and peer mentoring.</div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="section-title"><h2 style="margin:0">Contact Me</h2></div>
+      <div class="grid" style="grid-template-columns:1fr 360px;gap:18px;align-items:start">
+        <div class="card contact-card">
+          <form id="contactForm" class="contact-form" autocomplete="on">
+            <div class="form-row">
+              <label class="form-label" for="cname">Name</label>
+              <input class="form-input" type="text" id="cname" name="name" required placeholder="Your full name" />
+            </div>
+            <div class="form-row">
+              <label class="form-label" for="cemail">Email</label>
+              <input class="form-input" type="email" id="cemail" name="email" required placeholder="you@example.com" />
+            </div>
+            <div class="form-row">
+              <label class="form-label" for="cmsg">Message</label>
+              <textarea class="form-input" id="cmsg" name="message" rows="5" required placeholder="Tell me about your project or opportunity..."></textarea>
+            </div>
+
+            <div class="btn-row">
+              <button class="btn btn-primary" type="submit">Send</button>
+              <button class="btn btn-ghost" type="button" id="saveDraft">Save draft</button>
+              <div id="savedToast" class="toast" style="margin-left:8px;display:none">Draft saved locally</div>
+            </div>
+          </form>
+        </div>
+
+        
+          
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center">
+      <div>&copy; <span id="year"></span> Mohd Arsalan Khan</div>
+      <div style="color:var(--muted)"> My Portfolio</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear()
+
+    // contact form local storage (draft save + demo submit)
+    const contactForm = document.getElementById('contactForm')
+    contactForm.addEventListener('submit',e=>{
+      e.preventDefault();
+      // In a real site you'd send this to a server. For demo, show an alert and clear form.
+      alert('Thanks — your message was recorded (demo).')
+      contactForm.reset()
+      localStorage.removeItem('contactDraft')
+    })
+
+    document.getElementById('saveDraft').addEventListener('click',()=>{
+      const draft={name:document.getElementById('cname').value,email:document.getElementById('cemail').value,msg:document.getElementById('cmsg').value};
+      localStorage.setItem('contactDraft',JSON.stringify(draft));
+      const t=document.getElementById('savedToast');t.style.display='block';setTimeout(()=>t.style.display='none',1600)
+    })
+
+    // populate draft if present
+    window.addEventListener('DOMContentLoaded',()=>{
+      try{
+        const raw = localStorage.getItem('contactDraft')
+        if(raw){const d=JSON.parse(raw);if(d.name)document.getElementById('cname').value=d.name; if(d.email)document.getElementById('cemail').value=d.email; if(d.msg)document.getElementById('cmsg').value=d.msg}
+      }catch(e){console.warn('Draft load failed',e)}
+    })
+
+    // scroll to contact
+    document.getElementById('scrollContact').addEventListener('click',()=>{document.getElementById('contact').scrollIntoView({behavior:'smooth'})})
+  </script>
+</body>
+</html>
